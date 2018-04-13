@@ -2,6 +2,7 @@
 
 import os
 from argparse import ArgumentParser
+from datetime import datetime
 
 from weasyprint import HTML
 
@@ -17,12 +18,19 @@ def get_page(url):
     return page
 
 
-def save_pdf(html_string, name, month, category):
-    path = 'articles/{}/{}'.format(category, month)
+def parse_date(date):
+    time_obj = datetime.strptime(date, "%B %d, %Y")
+    return time_obj
+
+
+def save_pdf(html_string, name, dated, category):
+    article_date = parse_date(dated).strftime("%Y%m%d")
+    path = 'articles/{}/{}'.format(category, article_date)
     if not os.path.exists(path):
-        os.makedirs(path)    
-    HTML(string=html_string).write_pdf("{}/{}.pdf".format(path, name.replace('/', '-')))
-    print('written in ', month, ' page ', name)
+        os.makedirs(path)
+    file_name = "{}/{}-{}.pdf".format(path, article_date, name.replace('/', '-'))
+    HTML(string=html_string).write_pdf(file_name)
+    print('written file', file_name)
 
 
 def process_category(category, pages, page_start=1):
@@ -35,7 +43,8 @@ def process_category(category, pages, page_start=1):
             link = title.links.pop()
             page = get_page(link)
             article = page.html.find('article.single-post > div.post-content', first=True)
-            save_pdf(article.html, title.text, article.find('span.meta_date', first=True).text.split()[0], category)
+            article_date = article.find('span.meta_date', first=True).text
+            save_pdf(article.html, title.text, article_date, category)
         print('processed page ', i)
 
 
