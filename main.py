@@ -42,7 +42,7 @@ def process_category(category, pages, page_start=1):
         for title in titles:
             link = title.links.pop()
             page = get_page(link)
-            article = page.html.find('article.single-post > div.post-content', first=True)
+            article = page.html.find('div.inside_post', first=True)
             article_date = article.find('span.meta_date', first=True).text
             save_pdf(article.html, title.text, article_date, category)
         print('processed page ', i)
