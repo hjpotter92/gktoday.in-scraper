@@ -25,7 +25,7 @@ pycparser==2.18
 pyee==5.0.0
 Pyphen==0.9.4
 pyppeteer==0.0.17
-pyquery==1.4.0
+pyquery==1.4.3
 requests==2.21.0
 requests-html==0.6.6
 six==1.12.0
