@@ -24,7 +24,7 @@ pycodestyle==2.4.0
 pycparser==2.18
 pyee==5.0.0
 Pyphen==0.9.4
-pyppeteer==0.0.17
+pyppeteer==0.2.5
 pyquery==1.4.0
 requests==2.21.0
 requests-html==0.6.6
