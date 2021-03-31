@@ -14,7 +14,7 @@ fake-useragent==0.1.10
 html5lib==1.0.1
 idna==2.6
 lxml==4.6.2
-parse==1.8.2
+parse==1.19.0
 pdfrw==0.4
 Pillow==8.1.1
 pipenv==2018.11.26
