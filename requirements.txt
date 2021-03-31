@@ -22,7 +22,7 @@ py-backwards==0.7
 py-backwards-astunparse==1.5.0.post3
 pycodestyle==2.4.0
 pycparser==2.18
-pyee==5.0.0
+pyee==8.1.0
 Pyphen==0.9.4
 pyppeteer==0.0.17
 pyquery==1.4.0
