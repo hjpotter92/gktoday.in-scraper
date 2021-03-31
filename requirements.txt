@@ -20,7 +20,7 @@ Pillow==8.1.1
 pipenv==2018.11.26
 py-backwards==0.7
 py-backwards-astunparse==1.5.0.post3
-pycodestyle==2.4.0
+pycodestyle==2.7.0
 pycparser==2.18
 pyee==5.0.0
 Pyphen==0.9.4
