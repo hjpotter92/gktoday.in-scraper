@@ -9,7 +9,7 @@ material.
 # Dependency
 
 The project depends on modules listed in the `requirements.txt`
-file. The program uses Python 3.5.3. Install dependencies with `pip`:
+file. The program uses Python 3.6+. Install dependencies with `pip`:
 
     pip install -r requirements.txt
 
@@ -19,13 +19,13 @@ The `-h` parameter to the executable `main.py` provides you with:
 
     $ ./main.py -h
     usage: main.py [-h] [--start START] category page_num
-    
+
     Parse and save as PDF range of pages from gktoday.in for category
-    
+
     positional arguments:
       category              Provide category for the website such as `environment-current-affairs`
       page_num              Page until which to parse
-    
+
     optional arguments:
       -h, --help            show this help message and exit
       --start START, -s START
@@ -35,7 +35,7 @@ which is enough to begin putting together the pages. The generated PDF
 files are placed into the directory structure as follows:
 
     articles/<category>/<month-name>/<article-title>
-	
+
 # Combining all files to a single files
 
 While I could do this in python itself, I thought that having it
