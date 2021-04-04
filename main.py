@@ -12,7 +12,7 @@ SESSION = HTMLSession()
 BASE_URL = "https://www.gktoday.in/current-affairs/category/{category}/page/{page_num}"
 
 
-def get_page(url):
+def get_page(url: str):
     return SESSION.get(url)
 
 
@@ -32,7 +32,7 @@ def save_pdf(html_string, name, dated, category):
     print("written file", file_name)
 
 
-def process_category(category, pages, page_start=1):
+def process_category(category: str, pages: int, page_start: int = 1):
     temp_args = {"category": category, "page_num": 1}
     for i in range(page_start, pages + 1):
         temp_args["page_num"] = i
@@ -64,5 +64,4 @@ if __name__ == "__main__":
         default=1,
     )
     args = parser.parse_args()
-    # print(get_page(BASE_URL.format(**vars(args))).html)
     process_category(args.category, args.page_num, args.start)
