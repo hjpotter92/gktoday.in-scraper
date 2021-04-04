@@ -21,8 +21,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags:
-            - docker.pkg.github.com/hjpotter92/gktoday.in-scraper/latest:latest
-            - ghcr.io/hjpotter92/gktoday.in-scraper:latest
+          tags: |
+            docker.pkg.github.com/hjpotter92/gktoday.in-scraper/latest:latest
+            ghcr.io/hjpotter92/gktoday.in-scraper:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
