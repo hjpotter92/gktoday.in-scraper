@@ -37,6 +37,6 @@ jobs:
             "github_token=${{ secrets.GITHUB_TOKEN }}"
           tags: |
             docker.pkg.github.com/hjpotter92/gktoday.in-scraper/latest:latest
-            ghcr.io/hjpotter92/gktoday.in-scraper:latest
+            ghcr.io/hjpotter92/gktoday.in-scraper/latest:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}

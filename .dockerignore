@@ -1,2 +1,5 @@
-Dockerfile
 .*
+*~
+Dockerfile
+pyrightconfig.json
+articles/
